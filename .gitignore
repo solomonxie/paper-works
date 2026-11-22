@@ -76,3 +76,7 @@ yarn-error.log
 
 # Local signing — never committed, see the security skill
 ios/Local.xcconfig
+
+# SwiftPM / xcodegen
+Core/.build/
+PaperWorksSwift.xcodeproj/
