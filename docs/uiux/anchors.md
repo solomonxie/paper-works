@@ -190,21 +190,21 @@ panel — picking folds it.
 
 ## First run
 
-Three screens, no skip, because one anchor draws nothing.
+Two screens. No birth date: plans care about their own events, not a life line.
 
 ```
-  ①                      ②                      ③
- ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
- │ Paper Works │      │ One more.    │      │ Pick a plan  │
- │              │      │              │      │              │
- │ When were    │      │ Anything big │      │ Skilled      │
- │ you born?    │      │ already      │      │ migration ›  │
- │              │      │ behind you?  │      │ Citizenship ›│
- │ ┌──────────┐ │      │              │      │ Getting      │
- │ │ 1991-04▌ │ │      │ ( Skip )     │      │ married ›    │
- │ └──────────┘ │      │ [[ Add ]]    │      │              │
- │ [[ Next ]]   │      │              │      │ ( Later )    │
- └──────────────┘      └──────────────┘      └──────────────┘
+  ①                      ②
+ ┌──────────────┐      ┌──────────────┐
+ │ Paper Works  │      │ Pick a plan  │
+ │ Paperwork for│      │              │
+ │ life's big   │      │ Skilled      │
+ │ moves.       │      │ migration ›  │
+ │ Anything     │      │ Citizenship ›│
+ │ recent still │      │ Getting      │
+ │ to file?     │      │ married ›    │
+ │ ( Skip )     │      │              │
+ │ [[ Add ]]    │      │ ( Later )    │
+ └──────────────┘      └──────────────┘
 ```
 
 ## States
@@ -279,9 +279,8 @@ precision open     Precision  to the day         ⌄
 | `anchor.delete` | {n} plans lose their date and detach. |
 | `anchor.future` | That's ahead — it'll show as a plan, not a fact. |
 | `anchor.moveConfirm` | {n} steps get rescheduled. {m} already done keep their real dates. |
-| `anchor.firstRun.1` | When were you born? |
-| `anchor.firstRun.2` | Anything big already behind you? |
-| `anchor.firstRun.3` | Pick a plan |
+| `anchor.firstRun.1` | Anything recent that still has forms to file? |
+| `anchor.firstRun.2` | Pick a plan |
 
 ## Notes
 

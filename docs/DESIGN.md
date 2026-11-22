@@ -195,6 +195,11 @@ Step        template node in a playbook         offset, deps, docs, prep, how-to
                                                 ages, conditions
 Instance    a Step bound to real dates          status, startBy, dueBy, notes
 Document    a thing you must hold               issued, expires, where it lives
+ToolPlan    a non-paperwork plan on a board     kind (paperwork · babyNames), personId,
+                                                anchorId, addedOn, title, names (its own
+                                                NameState); in settings
+BabyName    a bundled name card                 name, gender, US rank, origin,
+                                                meaning, tags; likes live on the ToolPlan
 ```
 
 Scheduling, per step:

@@ -157,5 +157,12 @@ those two are the bottleneck worth doing well rather than fast.
 - [x] T8.2 Rename to Paper Works — Xcode project/target/scheme `PaperWorks`, bundle id `…paperworks`, store names, copy around paperwork prep; old `life-chapters-backup` files still import — see `src/data/plan.ts`
 - [ ] T8.3 Retake screenshots and README images with the new name and home
 
+## Phase 9: Baby names
+
+- [ ] T9.1 Name data — ~4,700 English names (SSA counts: gender, rank, peak year; Hitchcock Bible hints; written origin, language, meaning, tags) and ~400 Chinese given names, built by `scripts/names` — see `src/content/names`
+- [ ] T9.2 Deck and likes — filters (gender, English/中文, tags), stable shuffle, like/pass/undo, reshuffle skipped, kept in settings — see `src/domain/names.ts`
+- [ ] T9.3 Screens — Baby names deck and Liked names, from a Baby due / Child born chapter (drawing: `uiux/names.md`) — see `src/screens/NamesScreen.tsx`
+- [ ] T9.4 Export to Reminders — one-time list per event, start-by due dates (drawing: `uiux/timeline.md`) — see `ios/PaperWorks/Native/ReminderExport.swift`
+
 One agent owns this file and checks the boxes. Agents report done; they don't
 edit the checklist.

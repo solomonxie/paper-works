@@ -85,6 +85,8 @@ Pushed from any upcoming event on the home list.
  ╰────────────────────────────────────────╯
   OPENS                                     ← plans hanging off this date
   Citizenship · CA              ✓ attached ›
+  Baby names                      ✓ added ›  ← Baby due / Child born; tap adds or opens
+                                                THIS event's plan → names.md
  ──────────────────────────────────────────
   ACTIVE STEPS                          (4)
   ⚠ Book a language test    5 days late  ›
@@ -102,6 +104,9 @@ Pushed from any upcoming event on the home list.
   ENDS WITH
   ○ Apply for permanent resi…  Apr 2028  ›
  ──────────────────────────────────────────
+    Export to Reminders                    ← once: a Reminders list named after
+                                             the event, each step due on its
+                                             start-by date; again adds only new
   ( Edit this event )
 ```
 

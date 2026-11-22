@@ -24,6 +24,7 @@ level up in [`../UIUX_DESIGN.md`](../UIUX_DESIGN.md).
 | [`step.md`](step.md) | Step detail |
 | [`documents.md`](documents.md) | Document detail |
 | [`settings.md`](settings.md) | Settings section and its children |
+| [`names.md`](names.md) | Baby names deck, liked names |
 | [`components.md`](components.md) | Reused parts, all variants |
 
 ## Glyphs used here

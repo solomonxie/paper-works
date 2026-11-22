@@ -126,9 +126,9 @@ to press.
 `ⓘ` on this iPhone: "One copy a day, replaced on every change that day and
 kept 30 days. What changed, and when, goes into a change log that is only ever
 added to." `ⓘ` change log: "Every change, one line each: when, whose board,
-what happened. Added to, never rewritten or cleared — one file a year." `ⓘ` iCloud: "One
-file a day in iCloud Drive › Paper Works, replaced on every change that day.
-Survives losing the phone."
+what happened. Added to, never rewritten or cleared — one file a year." `ⓘ` iCloud: "Saved
+on every change in iCloud Drive › Paper Works, with scans and a latest.json;
+one dated copy a day, kept 30 days. Survives deleting the app or losing the phone."
 
 Tap a row → confirm, then the plan is replaced with that copy — after the plan
 you had a moment ago is saved as `before restore`, so a restore can be undone
@@ -163,6 +163,14 @@ import, would replace
   │ are overwritten.                     │
   │   ( Cancel )        [[ Replace ]]!   │
   └──────────────────────────────────────┘
+
+icloud on by default (once for existing installs; later choice sticks)
+  Detail: "Saved automatically on every change. Turning it off means data
+  won't survive deleting the app." Off: "Off: your data won't survive deleting the app."
+  Not ready: "iCloud isn't ready yet. Data stays on this iPhone for now."
+Fresh install or after deletion, local empty + iCloud has a snapshot: restored
+before first screen (waits up to 8 s; plan, settings, moves, scans), toast
+"Restored from iCloud". Local data present: never overwritten. Demo: memory only.
 
 icloud unavailable
   iCloud Drive                         ─●·

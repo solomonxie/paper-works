@@ -208,7 +208,7 @@ detaching     │ Detach "Retirement · CA"?    │
 | plan row | tap | → playbook detail, steps dated |
 | `Allow` | tap | asks iOS; if already refused, opens iOS Settings |
 | `[[ Attach ]]` | tap | instantiate + reflow, then back to the page |
-| `Anchored on` | tap | when the person has two dates of that kind: pick one; dates update |
+| `Anchored on` | tap | pick any event on this board (the plan's own kind listed first) or `Add a new event…`; dates update. Before attaching with no event of its kind: `Choose` / `Add` |
 | `Import a playbook file…` | tap | `[ document picker ]`, then validate |
 | `⋯` | tap | `Duplicate` `Export…` `Detach`! |
 
@@ -272,3 +272,55 @@ rule they obey.
 
 Expiring documents live here, not in a tab: they run out on their own schedule
 and belong next to the steps they threaten.
+
+## Other kinds of plans
+
+A plan has a kind. Paperwork plans are playbooks (tracks with dated steps);
+tool plans are `ToolPlan` rows kept on the board, today only `Baby names`.
+Added per person. Each Baby names plan owns its names state (likes, history, custom
+names, surnames, filters, seed); several babies mean several plans. A plan can hang
+off any event (suggested: Baby due, Child born) or none; one plan per event.
+
+```
+  PLANS                                  (2)
+  ╭────────────────────────────────────────╮
+  │ (♥) Baby names · Baby due Jun 2027 ♥ 15 › │ ← rose badge = a names plan; one row per plan
+  │     Next: Ruth                         │
+  │     ━━━━━━━━░░░░░░░░░░░░░░░░░░░░░░░░░ │  ← thin bar: names seen
+  │────────────────────────────────────────│
+  │ (▤) Expecting a baby · BC       0/16 › │  ← blue document badge = paperwork
+  │     Next: Check your MSP coverage · now│
+  │     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ │  ← thin bar: steps done
+  ╰────────────────────────────────────────╯
+```
+
+Library, below the playbooks:
+
+```
+  OTHER KINDS OF PLANS                   (1)
+  ♡ Baby names          Added ✓   ( Add )    ← "N added ✓"; Add always makes another plan
+    Swipe through names, keep the ones you like.
+```
+
+`Add` opens a small chooser: the board's events (Baby due / Child born first),
+`No event`, `Add a new event…` (opens the event editor; tick Baby names there).
+Without an event, later plans are titled "Baby names (2)", "(3)".
+
+Chapter `Opens` and the event editor's `Plans this unlocks` create or open the plan
+for THAT event (never a duplicate for the same event). Default title: "Baby names ·
+<event label date>"; optional `title` overrides. The names screen shows the event as
+subtitle; its `⋯` menu and the plan row's context menu offer `Change event…` and
+`Remove plan` (undoable; the plan comes back with its names).
+
+Migration: on load and on iCloud restore, a legacy global `Settings.names` with any
+likes, passes, history or custom names moves into the first baby-names plan (a plan
+for "me" is created when none exists), then the global is cleared. The field stays
+decodable for old backups.
+
+Plan rows are two lines and a hairline bar (about 60 pt, was 100). A 32 pt rounded
+badge tells the kind apart at a glance: blue document = paperwork, rose heart = baby
+names; the count sits on the title line, long titles truncate.
+
+Every plan can link to any event, not only the kind it was written for: the
+newborn plan can hang off a Child born, Baby due or any other event, and be
+moved to another later from `Anchored on`. Nothing asks for a birth date.
