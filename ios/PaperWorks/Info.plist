@@ -47,6 +47,10 @@
 	<string>Take a photo of a document to keep with the step that needs it.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Pick a photo of a document to keep with the step that needs it.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>Only when you tap Export to Reminders: an event's steps are added to a list in Reminders.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Only when you tap Export to Reminders: an event's steps are added to a list in Reminders.</string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
 		<key>iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)</key>

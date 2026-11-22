@@ -1,10 +1,12 @@
 import React, { useLayoutEffect, useMemo } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { diffDays } from '../domain/dates';
-import { formatLasts, formatPrecise } from '../domain/format';
+import { formatLasts, formatPrecise, formatShort } from '../domain/format';
 import { eventChapters, openSteps, chapterSteps, timelineNodes } from '../domain/plan';
 import type { Routes } from '../navigation/routes';
+import { haptic, reminderList } from '../platform';
+import { useNames } from './NamesScreen';
 import { actions, useStore } from '../state/store';
 import { Button, Card, ListRow, Rows, SectionHeader, StepRow, space, type, usePalette } from '../ui';
 import { ChapterBar } from './TimelineScreen';
@@ -22,6 +24,7 @@ export function ChapterScreen({ route, navigation }: NativeStackScreenProps<Rout
   const allAnchors = useStore(s => s.plan.anchors);
   const allTracks = useStore(s => s.plan.tracks);
   const now = useStore(s => s.now);
+  const names = useNames();
 
   const nodes = useMemo(
     () => timelineNodes(plan.anchors, plan.tracks, view.steps, now),
@@ -55,6 +58,28 @@ export function ChapterScreen({ route, navigation }: NativeStackScreenProps<Rout
     : [];
   const years = chapter?.end ? Math.max(1, Math.round(diffDays(chapter.start, chapter.end) / 365.25)) : null;
   const yearN = chapter ? Math.floor(diffDays(chapter.start, now) / 365.25) + 1 : null;
+
+  const listTitle = chapter?.label ?? node.label;
+  const liked = names.liked.length;
+  const exportToReminders = async () => {
+    const items = steps.map(s => ({
+      title: s.title,
+      date: s.startBy,
+      notes: `Start by ${formatShort(s.startBy)}, due ${formatShort(s.dueBy)} · ${s.playbook.title}. From Paper Works — a plan, not advice.`,
+    }));
+    const n = await reminderList.export(listTitle, items).catch(() => null);
+    if (n === null) {
+      Alert.alert("Couldn't export", 'Reminders didn’t take the list. Try again.');
+    } else if (n < 0) {
+      Alert.alert('Reminders access is off', 'Turn it on in Settings → Paper Works → Reminders.');
+    } else {
+      haptic('success');
+      Alert.alert(
+        n ? `Added ${n} step${n === 1 ? '' : 's'} to Reminders` : 'Already in Reminders',
+        `In the list “${listTitle}”, due on each start-by date.`,
+      );
+    }
+  };
 
   return (
     <ScrollView
@@ -139,6 +164,16 @@ export function ChapterScreen({ route, navigation }: NativeStackScreenProps<Rout
         <Text style={[type.body, styles.empty, { color: p.dim }]}>Nothing to start in this stretch.</Text>
       ) : null}
 
+      {anchor && (anchor.kind === 'baby-due' || anchor.kind === 'child-born') ? (
+        <Card style={styles.names}>
+          <ListRow
+            label="Baby names"
+            value={liked ? `♥ ${liked} liked` : undefined}
+            onPress={() => navigation.navigate('Names')}
+          />
+        </Card>
+      ) : null}
+
       {anchor ? (
         <>
           <SectionHeader title="Notes" />
@@ -178,6 +213,7 @@ export function ChapterScreen({ route, navigation }: NativeStackScreenProps<Rout
 
       {anchor ? (
         <View style={styles.edit}>
+          {steps.length ? <Button title="Export to Reminders" kind="plain" onPress={exportToReminders} /> : null}
           <Button
             title="Edit this event"
             onPress={() => navigation.navigate('AnchorEdit', { anchorId: anchor.id })}
@@ -192,8 +228,9 @@ const styles = StyleSheet.create({
   content: { paddingBottom: 120 },
   head: { padding: space.lg, gap: space.sm, marginTop: space.sm },
   empty: { paddingHorizontal: space.lg },
-  edit: { padding: space.lg, paddingTop: space.xl },
+  edit: { padding: space.lg, paddingTop: space.xl, gap: space.md },
   note: { padding: space.lg },
   other: { marginTop: space.sm },
+  names: { marginTop: space.xl },
   write: { alignSelf: 'flex-start', marginLeft: space.lg, marginTop: space.sm },
 });

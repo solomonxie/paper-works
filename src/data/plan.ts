@@ -1,3 +1,4 @@
+import type { NameState } from '../domain/names';
 import { ME, ME_PERSON } from '../domain/people';
 import type { Moves } from '../domain/radar';
 import type {
@@ -37,6 +38,8 @@ export interface Settings {
   askedNotifications: boolean;
   /** Whose board is showing. */
   personId: string;
+  /** Baby names: filters, surname, likes. */
+  names?: NameState;
 }
 
 export const DEFAULT_SETTINGS: Settings = {

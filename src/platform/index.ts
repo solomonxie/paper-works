@@ -99,6 +99,12 @@ export const calendar = {
   remove: (): Promise<void> => (inApp() ? Promise.resolve() : N.CalendarMirror?.remove() ?? Promise.resolve()),
 };
 
+export const reminderList = {
+  /** Resolves the number added, or -1 when access is refused. */
+  export: (title: string, items: Array<{ title: string; date: string; notes?: string }>): Promise<number> =>
+    inApp() ? Promise.resolve(items.length) : N.ReminderExport?.export(title, items) ?? Promise.resolve(0),
+};
+
 export type HapticKind = 'success' | 'warning' | 'light' | 'medium' | 'selection';
 
 let hapticsOn = true;

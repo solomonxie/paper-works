@@ -17,6 +17,8 @@ export type Routes = {
   Document: { documentId: string };
   Step: { instanceId: string };
   FirstRun: undefined;
+  Names: undefined;
+  LikedNames: undefined;
 };
 
 export type Nav = NativeStackNavigationProp<Routes>;

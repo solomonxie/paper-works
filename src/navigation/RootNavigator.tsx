@@ -36,6 +36,8 @@ function shared() {
         component={S.PlaybookScreen}
         options={{ title: '' }}
       />
+      <Stack.Screen name="Names" component={S.NamesScreen} options={{ title: 'Baby names' }} />
+      <Stack.Screen name="LikedNames" component={S.LikedNamesScreen} options={{ title: 'Liked names' }} />
       <Stack.Screen
         name="Library"
         component={S.LibraryScreen}

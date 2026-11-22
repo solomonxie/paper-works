@@ -4,6 +4,8 @@ export { BackupsScreen } from './BackupsScreen';
 export { DocumentScreen } from './DocumentScreen';
 export { FirstRunScreen } from './FirstRunScreen';
 export { LibraryScreen } from './LibraryScreen';
+export { LikedNamesScreen } from './LikedNamesScreen';
+export { NamesScreen } from './NamesScreen';
 export { ChapterScreen } from './ChapterScreen';
 export { PersonScreen } from './PersonScreen';
 export { PlaybookScreen } from './PlaybookScreen';

@@ -18,7 +18,9 @@
 		86A2FC66D736C95D8AC3E0A8 /* ICloudBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = C355B025CAEB6967272D159F /* ICloudBackup.m */; };
 		896926943880BB2557175571 /* CalendarMirror.m in Sources */ = {isa = PBXBuildFile; fileRef = 9176D5269E18189FB8EA6EB8 /* CalendarMirror.m */; };
 		8D28C9044C23693F89AE4552 /* ICloudBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C332344D02C079CCF7ED464 /* ICloudBackup.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* ReminderExport.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B8C9D0E1F2A3B4 /* ReminderExport.m */; };
 		AAA1AD6CC667583BB72D1401 /* Reminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC8C2C3F4DF99B15F5342D /* Reminders.m */; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* ReminderExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* ReminderExport.swift */; };
 		BAF20F2E3EEB61840B1F4404 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246DD7B91369EB7D45665C0D /* Reminders.swift */; };
 		EE4F764C2AF98352777E09F9 /* CalendarMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D36A6B630162A2B58C1BE8 /* CalendarMirror.swift */; };
 		FBDFE974FA99C757729EB3C7 /* Files.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D4621B8AE3716A6A0CE9B8 /* Files.m */; };
@@ -45,7 +47,9 @@
 		96E14FDD3E6BA7DE711A4F7F /* Signing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 		A0D3563DC324FE806C7DB6C9 /* Haptics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		C355B025CAEB6967272D159F /* ICloudBackup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ICloudBackup.m; sourceTree = "<group>"; };
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* ReminderExport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReminderExport.m; sourceTree = "<group>"; };
 		CB81116C0E99410A3259FC35 /* Haptics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Haptics.m; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* ReminderExport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReminderExport.swift; sourceTree = "<group>"; };
 		DE1DCA3DA01ABBD0081EF0B6 /* PaperWorks.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; name = PaperWorks.entitlements; path = PaperWorks/PaperWorks.entitlements; sourceTree = "<group>"; };
 		E4D36A6B630162A2B58C1BE8 /* CalendarMirror.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CalendarMirror.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -132,6 +136,8 @@
 			children = (
 				9176D5269E18189FB8EA6EB8 /* CalendarMirror.m */,
 				E4D36A6B630162A2B58C1BE8 /* CalendarMirror.swift */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* ReminderExport.m */,
+				D4E5F6A7B8C9D0E1F2A3B4C5 /* ReminderExport.swift */,
 				64D4621B8AE3716A6A0CE9B8 /* Files.m */,
 				10E6892DAB39517F33AE03E1 /* Files.swift */,
 				CB81116C0E99410A3259FC35 /* Haptics.m */,
@@ -238,9 +244,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PaperWorks/Pods-PaperWorks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PaperWorks/Pods-PaperWorks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -277,9 +287,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PaperWorks/Pods-PaperWorks-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PaperWorks/Pods-PaperWorks-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -296,6 +310,8 @@
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 				896926943880BB2557175571 /* CalendarMirror.m in Sources */,
 				EE4F764C2AF98352777E09F9 /* CalendarMirror.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* ReminderExport.m in Sources */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* ReminderExport.swift in Sources */,
 				FBDFE974FA99C757729EB3C7 /* Files.m in Sources */,
 				4CEFCA98D4D96FD48C90D098 /* Files.swift in Sources */,
 				15C8BB40B7C2CEBA9D9720B9 /* Haptics.m in Sources */,
