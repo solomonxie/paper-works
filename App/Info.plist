@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppStoreRegion</key>
+	<string>$(APP_STORE_REGION)</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Paper Works</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<false/>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Only if you turn on Calendar export: start-by dates are written into a Paper Works calendar.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Only if you turn on Calendar export: start-by dates are written into a Paper Works calendar.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo of a document to keep with the step that needs it.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Pick a photo of a document to keep with the step that needs it.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>Only when you tap Export to Reminders: an event's steps are added to a list in Reminders.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Only when you tap Export to Reminders: an event's steps are added to a list in Reminders.</string>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.APP_BUNDLE_ID</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<true/>
+			<key>NSUbiquitousContainerName</key>
+			<string>Paper Works</string>
+			<key>NSUbiquitousContainerSupportedFolderLevels</key>
+			<string>One</string>
+		</dict>
+	</dict>
+	<key>UIFileSharingEnabled</key>
+	<false/>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

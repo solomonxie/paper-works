@@ -1,0 +1,7 @@
+// Team and bundle ID come from the gitignored ios/Local.xcconfig (see ios/Local.xcconfig.example),
+// so the Swift app upgrades the React Native one in place and keeps its data.
+DEVELOPMENT_TEAM =
+PRODUCT_BUNDLE_IDENTIFIER = com.example.paperworks
+APP_STORE_REGION = us
+
+#include? "ios/Local.xcconfig"
